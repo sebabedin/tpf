@@ -50,4 +50,7 @@ if __name__ == '__main__':
     ax.set_ylabel('Radio [m]')
     ax.set_xlabel('Distancia [m]')
     
+    out_file = os.path.join('.', 'out', 'falko_radius_vs_distance.pdf')
+    plt.savefig(out_file, dpi=80, format='pdf')
+    
     plt.show()

@@ -31,7 +31,7 @@ def plot_bratio():
     bratios = [0.5, 1., 2.5, 4.]
     
     fig, axs = plt.subplots(len(bratios), len(angles), sharex=True, sharey=True)
-    fig.suptitle(f'Evaluación de la apertura angular de la esquina\nen fución de Beta con Radio = {radius}')
+    fig.suptitle(f'Evaluación de la apertura angular de la esquina\nen función de Beta con Radio = {radius}')
     
     for i, bratio, ax_rows in zip(range(0, len(bratios)), bratios, axs):
         for j, ax, angle in zip(range(0, len(angles)), ax_rows, angles):
@@ -80,7 +80,7 @@ def plot_bratio_vs_radius():
     bratio = 2.5
     
     fig, axs = plt.subplots(len(radii), len(angles), sharex=True, sharey=True)
-    fig.suptitle(f'Evaluación de la apertura angular de la esquina\nen fución del Radio con Beta = {bratio}')
+    fig.suptitle(f'Evaluación de la apertura angular de la esquina\nen función del Radio con Beta = {bratio}')
     
     for i, radius, ax_rows in zip(range(0, len(radii)), radii, axs):
         for j, ax, angle in zip(range(0, len(angles)), ax_rows, angles):
@@ -126,6 +126,11 @@ def plot_bratio_vs_radius():
 if __name__ == '__main__':
     
     plot_bratio()
-    plot_bratio_vs_radius()
+    out_file = os.path.join('.', 'out', 'falko_corner_vs_bratio.pdf')
+    plt.savefig(out_file, dpi=300, format='pdf')
     
-    plt.show()
+    plot_bratio_vs_radius()
+    out_file = os.path.join('.', 'out', 'falko_corner_vs_radius.pdf')
+    plt.savefig(out_file, dpi=300, format='pdf')
+    
+    # plt.show()
