@@ -179,7 +179,7 @@ if __name__ == '__main__':
         ]
     
     # kp_ths = [1, 2, 3, 4, 5]
-    kp_ths = [1]
+    kp_ths = [3]
     
     for kp_th in kp_ths:
         print(f'kp_th: {kp_th}')
@@ -193,7 +193,7 @@ if __name__ == '__main__':
         for exp in experiments:
             print("%10d | %10d | %10d |" % (exp.index, len(exp.nodes), len(exp.matches)))
         
-        if False:
+        if True:
             for exp in experiments:
                 print(f'{exp.name()}')
                 for node in exp.nodes.values():
@@ -201,7 +201,7 @@ if __name__ == '__main__':
                     if 0 < n_matches:
                         print(f'node {node.id}, matches: {n_matches}')
         
-        if False:
+        if True:
             tracemalloc.start()
             for exp in experiments:
                 exp_directory_path = os.path.join('.', 'out', f'exp_{exp.name()}_kpth_{exp.kp_th}')
@@ -209,7 +209,7 @@ if __name__ == '__main__':
                 create_directory(exp_directory_path)
                 
                 node_ids = list(exp.nodes.keys())
-                for node_id in node_ids[]:
+                for node_id in node_ids:
                     file_path = os.path.join(exp_directory_path, 'node_%04d.png' % (node_id))
                     fig = plot_frame(exp, node_id)
                     # plt.show()
